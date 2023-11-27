@@ -7,14 +7,14 @@ Macros for Vanilla (Era Client, based).
 
 #### Wand (don't cancel)
 ```lua
-#showtooltip
-/castsequence [exists] !shoot,!shoot
+#showtooltip 18
+/castsequence !shoot,!shoot
 ```
 
 #### DoT or HoT
 ```lua
 #showtooltip
-/cast [harm,exists,nodead,nomod]Shadow Word: Pain; [harm,exists,nodead,mod:shift]Shadow Word: Pain(Rank 1); [nomod]Renew(Rank 1); [mod:shift]Renew(Rank 1)
+/cast [noharm,mod:shift] Renew(Rank 1); [noharm] Renew; [harm,mod:shift] Shadow Word: Pain(Rank 1);  Shadow Word: Pain
 ```
 
 #### Smite, always Max Rank:
@@ -26,7 +26,7 @@ Macros for Vanilla (Era Client, based).
 #### Smite w/Downrank Mod
 ```lua
 #showtooltip
-/cast [harm,exists,nodead,nomod]Smite; [harm,exists,nodead,mod:shift]Smite(Rank 1);
+/cast [mod:shift] Smite(Rank 1); Smite;
 ```
 
 #### Holy Fire, always Max Rank:
@@ -41,8 +41,20 @@ Macros for Vanilla (Era Client, based).
 /use [nochanneling] Mind Flay
 ```
 
+#### Mind Sear (don't cancel)
+```lua
+#showtooltip
+/use [nochanneling] Mind Sear
+```
+
 #### Mind Blast/Mana Burn
 ```lua
 #showtooltip
-/cast [harm,exists,nodead,nomod]Mind Blast; [harm,exists,nodead,mod:shift]Mana Burn;
+/cast [harm,exists,nodead,mod:shift]Mana Burn; Mind Blast; 
+```
+
+#### Power Word: Shield w/Downrank Mod
+```lua
+#showtooltip
+/cast [mod:shift]Power Word: Shield(Rank 1); Power Word: Shield;
 ```
